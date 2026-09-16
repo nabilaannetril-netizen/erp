@@ -4,7 +4,9 @@ namespace App\Filament\Resources\Companies\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class CompanyForm
 {
@@ -12,7 +14,17 @@ class CompanyForm
     {
         return $schema
             ->components([
+                Section::make('Company Information')
+                ->icon(Heroicon::BuildingOffice2)
+                ->description('please provide an information of your company')
+                ->columns(2)
+                ->columnSpan(2)
+                ->schema([
                 TextInput::make('name')
+                ->columnSpanFull()
+                    ->required(),
+                TextInput::make('address')
+                ->columnSpanFull()
                     ->required(),
                 TextInput::make('email')
                     ->label('Email address')
@@ -21,11 +33,25 @@ class CompanyForm
                 TextInput::make('phone_number')
                     ->tel()
                     ->required(),
-                FileUpload::make('logo')
-                ->image()
-                ->disk('public')
-                ->directory('logos')
-                ->visibility('public'),
-            ]);
+                ]),
+               Section::make('Company Logo')
+                    ->description('Please upload the company logo below.')
+                    //->icon('heroicon-o-photograph')
+                    //->iconColor('Color::primary')
+                    ->schema([
+                        FileUpload::make('logo')
+                            ->image()
+                            ->disk('public')
+                            ->directory('logos')
+                            ->visibility('public'),
+                    ]),
+                
+                // FileUpload::make('logo')
+                // ->image()
+                // ->disk('public')
+                // ->directory('logos')
+                // ->visibility('public'),
+
+            ])->columns(3);
     }
 }
