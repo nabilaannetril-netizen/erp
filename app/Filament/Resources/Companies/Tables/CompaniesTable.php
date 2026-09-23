@@ -24,8 +24,10 @@ class CompaniesTable
                 TextColumn::make('phone_number')
                     ->searchable(),
                ImageColumn::make('logo')
-                    ->disk('public')
-                    ->searchable(),
+    ->label('Logo')
+    ->disk('public')
+    ->visibility('public')
+    ->size(60),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
