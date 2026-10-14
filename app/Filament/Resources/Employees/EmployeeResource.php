@@ -18,14 +18,13 @@ use UnitEnum;
 class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;
-
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
+ protected static string|BackedEnum|null $navigationIcon = Heroicon::Users;
     protected static ?string $recordTitleAttribute = 'user:name';
 
     // ==============================
     // HUMAN RESOURCE
     // ==============================
-    protected static string|UnitEnum|null $navigationGroup = 'Human Resource';
+    protected static string|UnitEnum|null $navigationGroup = 'Human Resource management';
 
     protected static ?int $navigationSort = 1;
 

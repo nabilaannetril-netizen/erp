@@ -25,7 +25,7 @@ class PositionResource extends Resource
     protected static ?string $navigationLabel = 'Position';
 
     // Masuk ke grup Human Resource
-    protected static string|UnitEnum|null $navigationGroup = 'Human Resource';
+    protected static string|UnitEnum|null $navigationGroup = 'Human Resource management';
 
     // Urutan nomor 2
     protected static ?int $navigationSort = 2;
