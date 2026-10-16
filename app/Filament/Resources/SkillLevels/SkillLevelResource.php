@@ -13,12 +13,19 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class SkillLevelResource extends Resource
 {
     protected static ?string $model = SkillLevel::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-academic-cap';
+
+ protected static string|\UnitEnum|null $navigationGroup = 'Human Resource management';
+
+    protected static ?string $navigationParentItem = 'Employee Skills';
+
+    protected static ?int $navigationSort = 3;
 
     protected static ?string $recordTitleAttribute = 'name';
 

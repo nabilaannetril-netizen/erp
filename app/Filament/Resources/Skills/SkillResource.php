@@ -18,7 +18,13 @@ class SkillResource extends Resource
 {
     protected static ?string $model = Skill::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-wrench-screwdriver';
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedWrenchScrewdriver;
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Human Resource management';
+
+    protected static ?string $navigationParentItem = 'Employee Skills';
+
+    protected static ?int $navigationSort = 3;
 
     protected static ?string $recordTitleAttribute = 'name';
 

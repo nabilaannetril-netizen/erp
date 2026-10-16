@@ -19,7 +19,7 @@ class AttendanceResource extends Resource
 {
     protected static ?string $model = Attendance::class;
 
-     protected static string|UnitEnum|null $navigationGroup = 'Human Resource management';
+     protected static string|UnitEnum|null $navigationGroup = 'settings';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClock;
 
